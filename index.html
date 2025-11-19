@@ -138,7 +138,7 @@
     /* Hero */
     .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 2rem;
       align-items: center;
       padding: 2.5rem 0 2rem;
@@ -255,46 +255,6 @@
       border-radius: 999px;
       background: rgba(15, 23, 42, 0.8);
       border: 1px solid rgba(51, 65, 85, 0.9);
-    }
-
-    .hero-card {
-      border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      padding: 1.5rem 1.4rem 1.3rem;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero-card-title {
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.8rem;
-      font-size: 0.85rem;
-    }
-
-    .hero-pill {
-      padding: 0.7rem 0.75rem;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .hero-pill-label {
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .hero-pill-value {
-      font-size: 0.9rem;
     }
 
     /* Sections */
@@ -469,10 +429,6 @@
 
     /* Responsive */
     @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
       .nav {
         flex-wrap: wrap;
         justify-content: center;
@@ -483,10 +439,6 @@
         justify-content: center;
         flex-wrap: wrap;
       }
-
-      .hero-card {
-        order: -1;
-      }
     }
 
     @media (max-width: 540px) {
@@ -496,10 +448,6 @@
 
       .hero {
         padding-top: 1.6rem;
-      }
-
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -532,12 +480,12 @@
           <div>
             <div class="hero-tag">
               <span class="hero-tag-dot"></span>
-              <span>Finance • Data</span>
+              <span>Finance • Data • Code</span>
             </div>
 
             <h1 class="hero-title">
               <span class="hero-highlight">Portfolio Repository</span><br />
-              Projects by Paul McCoy.
+              Projects and artifacts by Paul McCoy.
             </h1>
 
             <p class="hero-subtitle">
@@ -573,6 +521,7 @@
               <span>Automation & tooling</span>
             </div>
           </div>
+        </section>
 
         <!-- NOTEBOOKS -->
         <section id="notebooks">
@@ -669,7 +618,7 @@
           </div>
 
           <div class="projects-grid">
-            <!-- Frankenstine word count -->
+            <!-- Frankenstein word count -->
             <article class="card">
               <div class="card-badge-row">
                 <span class="card-badge">Python</span>
@@ -878,7 +827,7 @@
           <div class="section-header">
             <h2 class="section-title">Contact</h2>
             <p class="section-subtitle">
-              For questions about any of these projects or related topics, feel free
+              For questions about any of these projects or artifacts, feel free
               to reach out.
             </p>
           </div>
@@ -890,8 +839,7 @@
               roles, or collaborations.
             </div>
             <div class="contact-links">
-              <!-- Replace with your real email & LinkedIn -->
-              <a class="pill-link" href="paulmccoy890@gmail.com">
+              <a class="pill-link" href="mailto:paulmccoy890@gmail.com">
                 Email: paulmccoy890@gmail.com
               </a>
               <a
