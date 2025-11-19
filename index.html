@@ -553,7 +553,452 @@
     /* Contact / footer */
     .contact-card {
       margin-top: 1.2rem;
-      border-radius: var(--
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 1.2rem 1.1rem;
+      background: radial-gradient(circle at top, #020617, #020617);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
 
+    .contact-card strong {
+      color: #e5e7eb;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30, 64, 175, 0.5);
+      margin-top: 2.5rem;
+      padding-top: 0.9rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding-bottom: 0.8rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .charts-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        padding-inline: 1rem;
+      }
+
+      .hero {
+        padding-top: 1.6rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top navigation -->
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <span class="nav-dot"></span>
+          <span>Finance & Data Portfolio</span>
+        </div>
+        <div class="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#repos">GitHub Repos</a>
+          <a href="#charts">Charts</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <div class="hero-tag">
+              <span class="hero-tag-dot"></span>
+              <span>Finance • Data • Code</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="hero-highlight">Your Name</span><br />
+              Building data-driven stories in markets.
+            </h1>
+
+            <p class="hero-subtitle">
+              I’m a finance-focused analyst who works with
+              <strong>Python</strong>, <strong>R</strong>,
+              <strong>Tableau</strong>, and <strong>Excel</strong> to build
+              backtests, forecasting models (VAR), and portfolio tools. This
+              site collects a few of my favorite projects.
+            </p>
+
+            <div class="hero-actions">
+              <!-- Replace the href with your actual resume / PDF -->
+              <a class="btn-primary" href="#" target="_blank" rel="noreferrer">
+                View Resume
+              </a>
+              <!-- Replace with your real GitHub profile URL -->
+              <a
+                class="btn-secondary"
+                href="https://github.com/YOUR-GITHUB-USERNAME"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub
+              </a>
+            </div>
+
+            <div class="hero-meta">
+              <span>Backtesting • Portfolio Analysis</span>
+              <span>Time Series • VAR & Forecasting</span>
+              <span>Tableau • Data Visualization</span>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card-title">Snapshot</div>
+            <div class="hero-grid">
+              <div class="hero-pill">
+                <div class="hero-pill-label">Focus</div>
+                <div class="hero-pill-value">
+                  Equity research, risk & portfolio analytics
+                </div>
+              </div>
+              <div class="hero-pill">
+                <div class="hero-pill-label">Languages</div>
+                <div class="hero-pill-value">Python, R, SQL, VBA</div>
+              </div>
+              <div class="hero-pill">
+                <div class="hero-pill-label">Core Tools</div>
+                <div class="hero-pill-value">
+                  Spyder, Jupyter, Tableau, Excel, GitHub
+                </div>
+              </div>
+              <div class="hero-pill">
+                <div class="hero-pill-label">Interests</div>
+                <div class="hero-pill-value">
+                  Factor investing, FX, options, sports analytics
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+          <div class="section-header">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">
+              Selected work in backtesting, forecasting, and visualization. Each
+              card links to code, write-ups, or dashboards where applicable.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 1: EMA Backtest -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Python Backtest</span>
+                <span class="card-tag">Equities • EMA</span>
+              </div>
+              <h3 class="card-title">
+                EMA Crossover Strategy on S&P 500 Constituents
+              </h3>
+              <p class="card-meta">Python • pandas • yfinance • Spyder</p>
+              <p class="card-text">
+                Built an EMA crossover backtest that downloads historical price
+                data from Yahoo Finance, simulates trade entries/exits, and
+                benchmarks against a buy-and-hold S&P 500 strategy.
+              </p>
+              <ul class="card-list">
+                <li>Configurable short/long EMA windows and rebalancing rules.</li>
+                <li>Calculates CAGR, max drawdown, Sharpe ratio, and win rate.</li>
+                <li>Generates equity curve, drawdown chart, and trade log.</li>
+              </ul>
+              <div class="card-links">
+                <!-- Replace these href values with your actual links -->
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View Code (GitHub)
+                </a>
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  PDF Write-Up
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: VAR FX Forecast -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Time Series • VAR</span>
+                <span class="card-tag">FX • Macro Shock</span>
+              </div>
+              <h3 class="card-title">
+                VAR Model for FX Spot Rates Under Tariff Shock
+              </h3>
+              <p class="card-meta">R or Python • VAR • FX</p>
+              <p class="card-text">
+                Estimated a vector autoregression on USD/EUR, USD/CNY, and
+                USD/MXN spot rates, then simulated a tariff shock to study the
+                impact on exchange rates over multiple quarters.
+              </p>
+              <ul class="card-list">
+                <li>Includes data cleaning, stationarity checks, and lag selection.</li>
+                <li>Impulse response functions for a tariff shock scenario.</li>
+                <li>Visualizes projected depreciation paths vs. baseline.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View Notebook
+                </a>
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  FX Charts (PNG)
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: Tableau Dashboard -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Tableau Dashboard</span>
+                <span class="card-tag">Portfolio • Income</span>
+              </div>
+              <h3 class="card-title">
+                Dividend Income & Allocation Dashboard
+              </h3>
+              <p class="card-meta">Tableau • CSV Pipelines</p>
+              <p class="card-text">
+                Interactive Tableau dashboard that tracks portfolio allocation,
+                dividend income by ticker, and projected forward yield with
+                drill-downs by sector and holding.
+              </p>
+              <ul class="card-list">
+                <li>ETL from brokerage CSV exports and Google Sheets.</li>
+                <li>Dynamic filters for account, sector, and time horizon.</li>
+                <li>Integrates into this site as an embedded, live dashboard.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View Tableau Dashboard
+                </a>
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  Data Prep Script
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- GITHUB REPOS -->
+        <section id="repos">
+          <div class="section-header">
+            <h2 class="section-title">GitHub Repos</h2>
+            <p class="section-subtitle">
+              A curated subset of repositories. Link your public work in
+              backtesting, options pricing, and analytics here.
+            </p>
+          </div>
+
+          <div class="repos-grid">
+            <article class="card">
+              <h3 class="repo-name">
+                <a href="#" target="_blank" rel="noreferrer">
+                  finance-backtests
+                </a>
+              </h3>
+              <p class="repo-meta">
+                Collection of Python strategies (EMA, mean reversion, simple
+                factor tilts) with performance attribution and risk metrics.
+              </p>
+              <div class="repo-tags">
+                <span class="repo-tag">Python</span>
+                <span class="repo-tag">pandas</span>
+                <span class="repo-tag">Backtesting</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="repo-name">
+                <a href="#" target="_blank" rel="noreferrer">
+                  fx-var-models
+                </a>
+              </h3>
+              <p class="repo-meta">
+                VAR and VECM implementations for FX spot rate modeling, with
+                examples for USD/EUR, USD/CNY, and USD/MXN.
+              </p>
+              <div class="repo-tags">
+                <span class="repo-tag">R / Python</span>
+                <span class="repo-tag">Time Series</span>
+                <span class="repo-tag">FX</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3 class="repo-name">
+                <a href="#" target="_blank" rel="noreferrer">
+                  tableau-portfolio-dashboards
+                </a>
+              </h3>
+              <p class="repo-meta">
+                Data prep scripts and sample CSV templates that feed into
+                Tableau dashboards embedded on this site.
+              </p>
+              <div class="repo-tags">
+                <span class="repo-tag">Tableau</span>
+                <span class="repo-tag">ETL</span>
+                <span class="repo-tag">Visualization</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CHARTS / EMBEDS -->
+        <section id="charts">
+          <div class="section-header">
+            <h2 class="section-title">Embedded Charts</h2>
+            <p class="section-subtitle">
+              Examples of how you can embed live dashboards and static charts
+              (from Tableau, Plotly, or saved images) directly into the site.
+            </p>
+          </div>
+
+          <div class="charts-grid">
+            <!-- Example: Embedded Tableau dashboard -->
+            <article class="chart-card">
+              <div class="chart-title-row">
+                <div>
+                  <div class="chart-title">Portfolio Dashboard (Tableau)</div>
+                  <div>Live embedding via iframe</div>
+                </div>
+                <span class="card-tag">Tableau Public</span>
+              </div>
+              <p>
+                Publish your Tableau workbook to Tableau Public, copy the share
+                link, and paste it into the <code>src</code> attribute below.
+              </p>
+              <div class="chart-embed">
+                <!-- Replace this src with your real Tableau Public embed URL -->
+                <iframe
+                  src="https://public.tableau.com/views/YourDashboardName"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </article>
+
+            <!-- Example: Static image or Plotly -->
+            <article class="chart-card">
+              <div class="chart-title-row">
+                <div>
+                  <div class="chart-title">
+                    DRIP / Dividend Projection Chart
+                  </div>
+                  <div>Static PNG or Plotly embed</div>
+                </div>
+                <span class="card-tag">Python • Plotly</span>
+              </div>
+              <p>
+                Export your chart as a PNG and place it in an
+                <code>images/</code> folder in this repo, or embed an interactive
+                Plotly figure using the HTML export.
+              </p>
+              <div class="chart-embed">
+                <!-- Option A: static image -->
+                <!--
+                <img src="images/drip-projection.png"
+                     alt="Projected dividend income over 10 years" />
+                -->
+
+                <!-- Option B: placeholder if you haven't added an image yet -->
+                <div class="chart-placeholder">
+                  Add an image at <code>images/drip-projection.png</code> and
+                  uncomment the &lt;img&gt; tag in the HTML.
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+          <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">
+              Open to opportunities in equity research, risk analytics, data
+              science for finance, and related roles.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div>
+              <strong>Let’s connect.</strong><br />
+              If you’d like to talk about projects, roles, or collaborations,
+              feel free to reach out.
+            </div>
+            <div class="contact-links">
+              <!-- Replace with your real email & LinkedIn -->
+              <a class="pill-link" href="mailto:you@example.com">
+                Email: you@example.com
+              </a>
+              <a
+                class="pill-link"
+                href="https://www.linkedin.com/in/your-linkedin/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+          © <span id="year"></span> Your Name. Built with HTML/CSS and hosted
+          on GitHub Pages.
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Auto-update year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
