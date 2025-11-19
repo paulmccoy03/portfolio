@@ -326,7 +326,7 @@
       max-width: 26rem;
     }
 
-    /* Projects */
+    /* Cards / grids shared by all sections */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -455,101 +455,6 @@
       color: #e5e7eb;
     }
 
-    /* GitHub repos section */
-    .repos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.1rem;
-    }
-
-    .repo-name {
-      font-size: 0.94rem;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .repo-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .repo-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-    }
-
-    .repo-tag {
-      padding: 0.22rem 0.55rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      color: var(--text-muted);
-    }
-
-    /* Charts / embeds */
-    .charts-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 1.1rem;
-    }
-
-    .chart-card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: 1rem;
-      background: radial-gradient(circle at top, #020617, #020617);
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
-      font-size: 0.86rem;
-    }
-
-    .chart-title-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .chart-title {
-      font-size: 0.93rem;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-
-    .chart-embed {
-      margin-top: 0.5rem;
-      border-radius: 14px;
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      overflow: hidden;
-      background: radial-gradient(circle at top, #020617, #0b1120);
-    }
-
-    .chart-embed iframe {
-      width: 100%;
-      height: 260px;
-      border: none;
-    }
-
-    .chart-placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.4rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      background: repeating-linear-gradient(
-        135deg,
-        #020617,
-        #020617 8px,
-        #020817 8px,
-        #020817 16px
-      );
-    }
-
     /* Contact / footer */
     .contact-card {
       margin-top: 1.2rem;
@@ -589,10 +494,6 @@
     /* Responsive */
     @media (max-width: 860px) {
       .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .charts-grid {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -637,9 +538,10 @@
           <span>Finance & Data Portfolio</span>
         </div>
         <div class="nav-links">
-          <a href="#projects">Projects</a>
-          <a href="#repos">GitHub Repos</a>
-          <a href="#charts">Charts</a>
+          <a href="#excel-work">Excel Work</a>
+          <a href="#python-projects">Python</a>
+          <a href="#r-work">R Work</a>
+          <a href="#stock-analysis">Stock Analysis</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -663,9 +565,9 @@
             <p class="hero-subtitle">
               I’m a finance-focused analyst who works with
               <strong>Python</strong>, <strong>R</strong>,
-              <strong>Tableau</strong>, and <strong>Excel</strong> to build
-              backtests, forecasting models (VAR), and portfolio tools. This
-              site collects a few of my favorite projects.
+              <strong>Tableau / Excel</strong> to build backtests, forecasting
+              models, and portfolio tools. This site organizes my work into
+              Excel, Python, R, and stock analysis.
             </p>
 
             <div class="hero-actions">
@@ -685,9 +587,9 @@
             </div>
 
             <div class="hero-meta">
-              <span>Backtesting • Portfolio Analysis</span>
-              <span>Time Series • VAR & Forecasting</span>
-              <span>Tableau • Data Visualization</span>
+              <span>Excel models & dashboards</span>
+              <span>Python backtests & automation</span>
+              <span>R time series & forecasting</span>
             </div>
           </div>
 
@@ -707,7 +609,7 @@
               <div class="hero-pill">
                 <div class="hero-pill-label">Core Tools</div>
                 <div class="hero-pill-value">
-                  Spyder, Jupyter, Tableau, Excel, GitHub
+                  Excel, Spyder, Jupyter, Tableau, GitHub
                 </div>
               </div>
               <div class="hero-pill">
@@ -720,235 +622,243 @@
           </aside>
         </section>
 
-        <!-- PROJECTS -->
-        <section id="projects">
+        <!-- EXCEL WORK -->
+        <section id="excel-work">
           <div class="section-header">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Excel Work</h2>
             <p class="section-subtitle">
-              Selected work in backtesting, forecasting, and visualization. Each
-              card links to code, write-ups, or dashboards where applicable.
+              Selected Excel models, dashboards, and tools—often used for
+              valuation, portfolio tracking, and scenario analysis.
             </p>
           </div>
 
           <div class="projects-grid">
-            <!-- Project 1: EMA Backtest -->
+            <!-- Example Excel project 1 -->
             <article class="card">
               <div class="card-badge-row">
-                <span class="card-badge">Python Backtest</span>
-                <span class="card-tag">Equities • EMA</span>
+                <span class="card-badge">Excel</span>
+                <span class="card-tag">Valuation</span>
               </div>
-              <h3 class="card-title">
-                EMA Crossover Strategy on S&P 500 Constituents
-              </h3>
-              <p class="card-meta">Python • pandas • yfinance • Spyder</p>
+              <h3 class="card-title">DCF & Relative Valuation Model</h3>
+              <p class="card-meta">Excel • VBA (optional)</p>
               <p class="card-text">
-                Built an EMA crossover backtest that downloads historical price
-                data from Yahoo Finance, simulates trade entries/exits, and
-                benchmarks against a buy-and-hold S&P 500 strategy.
+                Integrated discounted cash flow and relative valuation template
+                with sensitivity tables and automated charts for price targets.
               </p>
               <ul class="card-list">
-                <li>Configurable short/long EMA windows and rebalancing rules.</li>
-                <li>Calculates CAGR, max drawdown, Sharpe ratio, and win rate.</li>
-                <li>Generates equity curve, drawdown chart, and trade log.</li>
+                <li>Inputs for revenue growth, margins, WACC, and multiples.</li>
+                <li>Sensitivity tables on WACC and terminal growth rate.</li>
+                <li>Outputs include intrinsic value range and scenario charts.</li>
               </ul>
               <div class="card-links">
-                <!-- Replace these href values with your actual links -->
+                <!-- Replace with your file or OneDrive / Google Drive link -->
                 <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View Code (GitHub)
+                  Download Excel
                 </a>
+              </div>
+            </article>
+
+            <!-- Example Excel project 2 -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Excel</span>
+                <span class="card-tag">Portfolio</span>
+              </div>
+              <h3 class="card-title">Dividend & DRIP Tracker</h3>
+              <p class="card-meta">Excel • Power Query (optional)</p>
+              <p class="card-text">
+                Tracker for dividend income, DRIP reinvestment, and forward
+                yield, fed by brokerage CSV exports.
+              </p>
+              <ul class="card-list">
+                <li>Automatic aggregation of dividend payments by ticker.</li>
+                <li>Forward income projections with DRIP on/off toggles.</li>
+                <li>Allocation and income charts driven by pivot tables.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  Download Excel
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- PYTHON FILES / PROJECTS -->
+        <section id="python-projects">
+          <div class="section-header">
+            <h2 class="section-title">Python Files</h2>
+            <p class="section-subtitle">
+              Scripts and notebooks focused on backtesting, automation, and
+              analytics using pandas, NumPy, and related libraries.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Python</span>
+                <span class="card-tag">Backtesting</span>
+              </div>
+              <h3 class="card-title">EMA Crossover Backtest Engine</h3>
+              <p class="card-meta">pandas • yfinance • matplotlib</p>
+              <p class="card-text">
+                Backtesting engine for EMA crossover strategies on equities,
+                with performance reporting and visualizations.
+              </p>
+              <ul class="card-list">
+                <li>Downloads historical data from Yahoo Finance.</li>
+                <li>Simulates signals and trades with position sizing rules.</li>
+                <li>Outputs equity curve, drawdown, and summary statistics.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View on GitHub
+                </a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Python</span>
+                <span class="card-tag">Automation</span>
+              </div>
+              <h3 class="card-title">Portfolio Data Pipeline</h3>
+              <p class="card-meta">pandas • openpyxl • CSV</p>
+              <p class="card-text">
+                Script that cleans brokerage exports, standardizes tickers, and
+                updates Excel / Tableau inputs automatically.
+              </p>
+              <ul class="card-list">
+                <li>Handles multiple broker formats and duplicates.</li>
+                <li>Generates clean holdings and transactions tables.</li>
+                <li>Designed to run in Spyder or as a cron job.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View on GitHub
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- R WORK -->
+        <section id="r-work">
+          <div class="section-header">
+            <h2 class="section-title">R Work</h2>
+            <p class="section-subtitle">
+              R scripts and RMarkdown notebooks focusing on time series,
+              forecasting, and econometrics for financial data.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">R</span>
+                <span class="card-tag">Time Series</span>
+              </div>
+              <h3 class="card-title">VAR Model for FX Spot Rates</h3>
+              <p class="card-meta">vars • tsDyn • tidyverse</p>
+              <p class="card-text">
+                Vector autoregression on FX spot rates (e.g., USD/EUR, USD/CNY,
+                USD/MXN) with impulse response analysis under tariff shocks.
+              </p>
+              <ul class="card-list">
+                <li>Preprocessing, stationarity tests, and lag selection.</li>
+                <li>Impulse response functions for policy / tariff scenarios.</li>
+                <li>RMarkdown report with charts and commentary.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View RMarkdown
+                </a>
+              </div>
+            </article>
+
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">R</span>
+                <span class="card-tag">Econometrics</span>
+              </div>
+              <h3 class="card-title">Factor & Risk Model Exploration</h3>
+              <p class="card-meta">tidyverse • broom • PerformanceAnalytics</p>
+              <p class="card-text">
+                R-based analysis of factor exposures (size, value, momentum) and
+                risk metrics on portfolio returns.
+              </p>
+              <ul class="card-list">
+                <li>Regressions vs. factor benchmarks (e.g., Fama–French).</li>
+                <li>Rolling beta and volatility estimates.</li>
+                <li>Visualization of factor contributions to return.</li>
+              </ul>
+              <div class="card-links">
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  View on GitHub
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- STOCK ANALYSIS -->
+        <section id="stock-analysis">
+          <div class="section-header">
+            <h2 class="section-title">Stock Analysis</h2>
+            <p class="section-subtitle">
+              Company and portfolio-level analysis, combining Excel models,
+              Python/R code, and written commentary.
+            </p>
+          </div>
+
+          <div class="projects-grid">
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Equity Research</span>
+                <span class="card-tag">Single Name</span>
+              </div>
+              <h3 class="card-title">Deep Dive: [Ticker] Investment Thesis</h3>
+              <p class="card-meta">Fundamental • Technical • Scenario Work</p>
+              <p class="card-text">
+                Full write-up on a single equity, including business overview,
+                valuation work, and risk / catalyst analysis.
+              </p>
+              <ul class="card-list">
+                <li>Links directly to supporting Excel model and code.</li>
+                <li>Base / bull / bear scenarios with target prices.</li>
+                <li>Summary one-pager for quick review.</li>
+              </ul>
+              <div class="card-links">
                 <a class="pill-link" href="#" target="_blank" rel="noreferrer">
                   PDF Write-Up
                 </a>
+                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
+                  Supporting Files
+                </a>
               </div>
             </article>
 
-            <!-- Project 2: VAR FX Forecast -->
             <article class="card">
               <div class="card-badge-row">
-                <span class="card-badge">Time Series • VAR</span>
-                <span class="card-tag">FX • Macro Shock</span>
+                <span class="card-badge">Portfolio</span>
+                <span class="card-tag">Multi-Asset</span>
               </div>
-              <h3 class="card-title">
-                VAR Model for FX Spot Rates Under Tariff Shock
-              </h3>
-              <p class="card-meta">R or Python • VAR • FX</p>
+              <h3 class="card-title">Portfolio Construction & Performance</h3>
+              <p class="card-meta">Excel • Python • Visualization</p>
               <p class="card-text">
-                Estimated a vector autoregression on USD/EUR, USD/CNY, and
-                USD/MXN spot rates, then simulated a tariff shock to study the
-                impact on exchange rates over multiple quarters.
+                Ongoing analysis of personal or hypothetical portfolios, focused
+                on allocation, factor tilts, and drawdown behavior.
               </p>
               <ul class="card-list">
-                <li>Includes data cleaning, stationarity checks, and lag selection.</li>
-                <li>Impulse response functions for a tariff shock scenario.</li>
-                <li>Visualizes projected depreciation paths vs. baseline.</li>
+                <li>Historical performance vs. benchmark indices.</li>
+                <li>Sector / factor exposure breakdowns.</li>
+                <li>Stress tests and scenario analysis summaries.</li>
               </ul>
               <div class="card-links">
                 <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View Notebook
+                  Summary Deck
                 </a>
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  FX Charts (PNG)
-                </a>
-              </div>
-            </article>
-
-            <!-- Project 3: Tableau Dashboard -->
-            <article class="card">
-              <div class="card-badge-row">
-                <span class="card-badge">Tableau Dashboard</span>
-                <span class="card-tag">Portfolio • Income</span>
-              </div>
-              <h3 class="card-title">
-                Dividend Income & Allocation Dashboard
-              </h3>
-              <p class="card-meta">Tableau • CSV Pipelines</p>
-              <p class="card-text">
-                Interactive Tableau dashboard that tracks portfolio allocation,
-                dividend income by ticker, and projected forward yield with
-                drill-downs by sector and holding.
-              </p>
-              <ul class="card-list">
-                <li>ETL from brokerage CSV exports and Google Sheets.</li>
-                <li>Dynamic filters for account, sector, and time horizon.</li>
-                <li>Integrates into this site as an embedded, live dashboard.</li>
-              </ul>
-              <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View Tableau Dashboard
-                </a>
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  Data Prep Script
-                </a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- GITHUB REPOS -->
-        <section id="repos">
-          <div class="section-header">
-            <h2 class="section-title">GitHub Repos</h2>
-            <p class="section-subtitle">
-              A curated subset of repositories. Link your public work in
-              backtesting, options pricing, and analytics here.
-            </p>
-          </div>
-
-          <div class="repos-grid">
-            <article class="card">
-              <h3 class="repo-name">
-                <a href="#" target="_blank" rel="noreferrer">
-                  finance-backtests
-                </a>
-              </h3>
-              <p class="repo-meta">
-                Collection of Python strategies (EMA, mean reversion, simple
-                factor tilts) with performance attribution and risk metrics.
-              </p>
-              <div class="repo-tags">
-                <span class="repo-tag">Python</span>
-                <span class="repo-tag">pandas</span>
-                <span class="repo-tag">Backtesting</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3 class="repo-name">
-                <a href="#" target="_blank" rel="noreferrer">
-                  fx-var-models
-                </a>
-              </h3>
-              <p class="repo-meta">
-                VAR and VECM implementations for FX spot rate modeling, with
-                examples for USD/EUR, USD/CNY, and USD/MXN.
-              </p>
-              <div class="repo-tags">
-                <span class="repo-tag">R / Python</span>
-                <span class="repo-tag">Time Series</span>
-                <span class="repo-tag">FX</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3 class="repo-name">
-                <a href="#" target="_blank" rel="noreferrer">
-                  tableau-portfolio-dashboards
-                </a>
-              </h3>
-              <p class="repo-meta">
-                Data prep scripts and sample CSV templates that feed into
-                Tableau dashboards embedded on this site.
-              </p>
-              <div class="repo-tags">
-                <span class="repo-tag">Tableau</span>
-                <span class="repo-tag">ETL</span>
-                <span class="repo-tag">Visualization</span>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <!-- CHARTS / EMBEDS -->
-        <section id="charts">
-          <div class="section-header">
-            <h2 class="section-title">Embedded Charts</h2>
-            <p class="section-subtitle">
-              Examples of how you can embed live dashboards and static charts
-              (from Tableau, Plotly, or saved images) directly into the site.
-            </p>
-          </div>
-
-          <div class="charts-grid">
-            <!-- Example: Embedded Tableau dashboard -->
-            <article class="chart-card">
-              <div class="chart-title-row">
-                <div>
-                  <div class="chart-title">Portfolio Dashboard (Tableau)</div>
-                  <div>Live embedding via iframe</div>
-                </div>
-                <span class="card-tag">Tableau Public</span>
-              </div>
-              <p>
-                Publish your Tableau workbook to Tableau Public, copy the share
-                link, and paste it into the <code>src</code> attribute below.
-              </p>
-              <div class="chart-embed">
-                <!-- Replace this src with your real Tableau Public embed URL -->
-                <iframe
-                  src="https://public.tableau.com/views/YourDashboardName"
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </article>
-
-            <!-- Example: Static image or Plotly -->
-            <article class="chart-card">
-              <div class="chart-title-row">
-                <div>
-                  <div class="chart-title">
-                    DRIP / Dividend Projection Chart
-                  </div>
-                  <div>Static PNG or Plotly embed</div>
-                </div>
-                <span class="card-tag">Python • Plotly</span>
-              </div>
-              <p>
-                Export your chart as a PNG and place it in an
-                <code>images/</code> folder in this repo, or embed an interactive
-                Plotly figure using the HTML export.
-              </p>
-              <div class="chart-embed">
-                <!-- Option A: static image -->
-                <!--
-                <img src="images/drip-projection.png"
-                     alt="Projected dividend income over 10 years" />
-                -->
-
-                <!-- Option B: placeholder if you haven't added an image yet -->
-                <div class="chart-placeholder">
-                  Add an image at <code>images/drip-projection.png</code> and
-                  uncomment the &lt;img&gt; tag in the HTML.
-                </div>
               </div>
             </article>
           </div>
