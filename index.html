@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paul McCoy | Finance & Data Portfolio</title>
+  <title>Paul McCoy | Portfolio Repository</title>
 
   <style>
     :root {
       --bg: #0f172a;
       --bg-elevated: #111827;
       --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.08);
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
       --border-subtle: #1f2937;
@@ -410,27 +411,6 @@
       margin-bottom: 0.7rem;
     }
 
-    .card-list {
-      list-style: none;
-      margin-bottom: 0.7rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .card-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.4rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .card-list li::before {
-      content: "▹";
-      font-size: 0.7rem;
-      color: #38bdf8;
-      margin-top: 0.08rem;
-    }
-
     .card-links {
       display: flex;
       flex-wrap: wrap;
@@ -531,13 +511,15 @@
       <nav class="nav">
         <div class="nav-left">
           <span class="nav-dot"></span>
-          <span>Paul McCoy | Finance & Data</span>
+          <span>Paul McCoy | Portfolio Repo</span>
         </div>
         <div class="nav-links">
-          <a href="#excel-work">Excel</a>
-          <a href="#python-projects">Python</a>
+          <a href="#overview">Overview</a>
+          <a href="#notebooks">Notebooks</a>
+          <a href="#excel">Excel</a>
+          <a href="#python">Python</a>
           <a href="#r-work">R</a>
-          <a href="#stock-analysis">Stock Analysis</a>
+          <a href="#reports">PDF / Docs</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -546,7 +528,7 @@
     <main>
       <div class="container">
         <!-- HERO -->
-        <section class="hero">
+        <section class="hero" id="overview">
           <div>
             <div class="hero-tag">
               <span class="hero-tag-dot"></span>
@@ -554,21 +536,26 @@
             </div>
 
             <h1 class="hero-title">
-              <span class="hero-highlight">Paul McCoy</span><br />
-              Building data-driven stories in markets.
+              <span class="hero-highlight">Portfolio Repository</span><br />
+              Projects and artifacts by Paul McCoy.
             </h1>
 
             <p class="hero-subtitle">
-              I work across <strong>Excel</strong>, <strong>Python</strong>, and
-              <strong>R</strong> to build valuation models, backtests, and
-              stock analysis. This site is organized into four areas of my work:
-              Excel models, Python files, R work, and stock analysis.
+              This repository collects work across
+              <strong>Jupyter notebooks</strong>, <strong>Excel</strong>,
+              <strong>Python</strong>, and <strong>R</strong> – including
+              financial statement analysis, hypothesis testing, automation
+              scripts, and more.
             </p>
 
             <div class="hero-actions">
-              <!-- Replace with your resume if you want -->
-              <a class="btn-primary" href="#" target="_blank" rel="noreferrer">
-                View Resume
+              <a
+                class="btn-primary"
+                href="https://github.com/paulmccoy03/portfolio"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View Repo on GitHub
               </a>
               <a
                 class="btn-secondary"
@@ -576,140 +563,236 @@
                 target="_blank"
                 rel="noreferrer"
               >
-                View GitHub
+                GitHub Profile
               </a>
             </div>
 
             <div class="hero-meta">
-              <span>Excel models & dashboards</span>
-              <span>Python backtests & automation</span>
-              <span>R time series & forecasting</span>
+              <span>Financial analysis</span>
+              <span>Data science & ML</span>
+              <span>Automation & tooling</span>
             </div>
           </div>
 
           <aside class="hero-card">
-            <div class="hero-card-title">Snapshot</div>
+            <div class="hero-card-title">Quick Stats</div>
             <div class="hero-grid">
               <div class="hero-pill">
-                <div class="hero-pill-label">Focus</div>
+                <div class="hero-pill-label">Repository</div>
+                <div class="hero-pill-value">paulmccoy03/portfolio</div>
+              </div>
+              <div class="hero-pill">
+                <div class="hero-pill-label">Key Areas</div>
                 <div class="hero-pill-value">
-                  Equity research, risk & portfolio analytics
+                  Finance, data analysis, text processing
                 </div>
               </div>
               <div class="hero-pill">
                 <div class="hero-pill-label">Languages</div>
-                <div class="hero-pill-value">Python, R, SQL, VBA</div>
-              </div>
-              <div class="hero-pill">
-                <div class="hero-pill-label">Core Tools</div>
                 <div class="hero-pill-value">
-                  Excel, Spyder, Jupyter, Tableau, GitHub
+                  Python, R, HTML, Excel / Jupyter
                 </div>
               </div>
               <div class="hero-pill">
-                <div class="hero-pill-label">Interests</div>
+                <div class="hero-pill-label">Artifacts</div>
                 <div class="hero-pill-value">
-                  Factor investing, FX, options, sports analytics
+                  Notebook, Excel, scripts, PDF report
                 </div>
               </div>
             </div>
           </aside>
         </section>
 
-        <!-- EXCEL WORK -->
-        <section id="excel-work">
+        <!-- NOTEBOOKS -->
+        <section id="notebooks">
           <div class="section-header">
-            <h2 class="section-title">Excel Work</h2>
+            <h2 class="section-title">Jupyter Notebook</h2>
             <p class="section-subtitle">
-              Excel-based financial statement analysis, valuation, and portfolio
-              modeling.
+              Interactive analysis and experimentation in notebook form.
             </p>
           </div>
 
           <div class="projects-grid">
-            <!-- Kraft FSA card with real link -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Notebook</span>
+                <span class="card-tag">Finance</span>
+              </div>
+              <h3 class="card-title">Financial Hypothesis Testing</h3>
+              <p class="card-meta">File: Financial_Hypothesis_Testing.ipynb</p>
+              <p class="card-text">
+                Jupyter notebook for financial hypothesis testing – ideal for
+                demonstrating statistical workflows and analysis logic in an
+                interactive format.
+              </p>
+              <div class="card-links">
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/Financial_Hypothesis_Testing.ipynb"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open on GitHub
+                </a>
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/raw/main/Financial_Hypothesis_Testing.ipynb"
+                >
+                  Download .ipynb
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- EXCEL -->
+        <section id="excel">
+          <div class="section-header">
+            <h2 class="section-title">Excel Work</h2>
+            <p class="section-subtitle">
+              Spreadsheet-based financial analysis and modeling.
+            </p>
+          </div>
+
+          <div class="projects-grid">
             <article class="card">
               <div class="card-badge-row">
                 <span class="card-badge">Excel</span>
                 <span class="card-tag">Financial Statement Analysis</span>
               </div>
               <h3 class="card-title">Kraft Financial Statement Analysis</h3>
-              <p class="card-meta">Workbook: Kraft_FSA.xlsx</p>
+              <p class="card-meta">File: Kraft_FSA.xlsx</p>
               <p class="card-text">
-                Detailed financial statement analysis of Kraft, including
-                common-size statements, ratio analysis, and interpretation
-                designed for academic and practical review.
+                Excel workbook for a detailed financial statement analysis of
+                Kraft, featuring ratio calculations, common-size statements, and
+                structured templates for interpretation.
               </p>
-              <ul class="card-list">
-                <li>Pre-built ratio templates and common-size financials.</li>
-                <li>Sections for profitability, liquidity, leverage, and efficiency.</li>
-                <li>Organized layout suitable for classwork or professional review.</li>
-              </ul>
               <div class="card-links">
-                <!-- Absolute URL directly to the file in the root of your site -->
-               <a
-                 class="pill-link"
-                 href="https://github.com/paulmccoy03/portfolio/raw/main/Kraft_FSA.xlsx"
-                 >
-                 Download Excel: Kraft FSA
-               </a>
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/raw/main/Kraft_FSA.xlsx"
+                >
+                  Download Excel
+                </a>
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/Kraft_FSA.xlsx"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on GitHub
+                </a>
               </div>
             </article>
+          </div>
+        </section>
 
-        <!-- PYTHON FILES -->
-        <section id="python-projects">
+        <!-- PYTHON -->
+        <section id="python">
           <div class="section-header">
-            <h2 class="section-title">Python Files</h2>
+            <h2 class="section-title">Python Scripts</h2>
             <p class="section-subtitle">
-              Python scripts and notebooks for backtesting, automation, and
-              financial analytics.
+              General-purpose scripts for text processing, machine learning, and
+              time series.
             </p>
           </div>
 
           <div class="projects-grid">
+            <!-- Frankenstine word count -->
             <article class="card">
               <div class="card-badge-row">
                 <span class="card-badge">Python</span>
-                <span class="card-tag">Backtesting</span>
+                <span class="card-tag">Text Processing</span>
               </div>
-              <h3 class="card-title">EMA Crossover Backtest</h3>
-              <p class="card-meta">pandas • yfinance • matplotlib</p>
+              <h3 class="card-title">Frankenstein Word Count</h3>
+              <p class="card-meta">File: Frankenstine_word_count.py</p>
               <p class="card-text">
-                Backtest engine that pulls historical prices from Yahoo Finance,
-                runs EMA crossover strategies, and compares performance to a
-                benchmark index.
+                Script to process the text of "Frankenstein" and compute word
+                counts or related statistics – a simple demo of text processing
+                in Python.
               </p>
-              <ul class="card-list">
-                <li>Configurable short/long EMAs and symbols.</li>
-                <li>Trade log, equity curve, and drawdown reporting.</li>
-                <li>Designed to run in Spyder or Jupyter.</li>
-              </ul>
               <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View Code (GitHub)
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/Frankenstine_word_count.py"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Script
                 </a>
               </div>
             </article>
 
+            <!-- MNIST neural network -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Python</span>
+                <span class="card-tag">Machine Learning</span>
+              </div>
+              <h3 class="card-title">MNIST Neural Network</h3>
+              <p class="card-meta">File: MNIST_NeuralNetworkCode.py</p>
+              <p class="card-text">
+                Code for training and/or evaluating a neural network on the
+                MNIST digit recognition dataset – a classic machine learning
+                benchmark.
+              </p>
+              <div class="card-links">
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/MNIST_NeuralNetworkCode.py"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Script
+                </a>
+              </div>
+            </article>
+
+            <!-- URL summary -->
             <article class="card">
               <div class="card-badge-row">
                 <span class="card-badge">Python</span>
                 <span class="card-tag">Automation</span>
               </div>
-              <h3 class="card-title">Portfolio Data Pipeline</h3>
-              <p class="card-meta">pandas • CSV • Excel</p>
+              <h3 class="card-title">URL Summary Script</h3>
+              <p class="card-meta">File: URLsummary.py</p>
               <p class="card-text">
-                Script to clean brokerage exports, standardize tickers, and
-                generate clean tables for Excel models or Tableau dashboards.
+                Script focused on summarizing or processing content from URLs –
+                useful as a small automation tool for information extraction.
               </p>
-              <ul class="card-list">
-                <li>Handles multiple file formats and duplicate rows.</li>
-                <li>Produces holdings, transactions, and dividends tables.</li>
-                <li>Easy to schedule or run interactively.</li>
-              </ul>
               <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View Code (GitHub)
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/URLsummary.py"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Script
+                </a>
+              </div>
+            </article>
+
+            <!-- VAR -->
+            <article class="card">
+              <div class="card-badge-row">
+                <span class="card-badge">Python</span>
+                <span class="card-tag">Time Series</span>
+              </div>
+              <h3 class="card-title">VAR Model Script</h3>
+              <p class="card-meta">File: VAR.py</p>
+              <p class="card-text">
+                Python implementation of a Vector Autoregression (VAR) workflow
+                for time series data – relevant for macro, FX, or multi-series
+                financial analysis.
+              </p>
+              <div class="card-links">
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/VAR.py"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Script
                 </a>
               </div>
             </article>
@@ -719,116 +802,125 @@
         <!-- R WORK -->
         <section id="r-work">
           <div class="section-header">
-            <h2 class="section-title">R Work</h2>
+            <h2 class="section-title">R Scripts</h2>
             <p class="section-subtitle">
-              Time series and econometrics work in R, including FX forecasting
-              and factor analysis.
+              R-based analysis for salaries and fixed income.
             </p>
           </div>
 
           <div class="projects-grid">
+            <!-- MLB salaries -->
             <article class="card">
               <div class="card-badge-row">
                 <span class="card-badge">R</span>
-                <span class="card-tag">Time Series</span>
+                <span class="card-tag">Salaries</span>
               </div>
-              <h3 class="card-title">VAR FX Spot Rate Model</h3>
-              <p class="card-meta">vars • tsDyn • tidyverse</p>
+              <h3 class="card-title">MLB Salaries Analysis</h3>
+              <p class="card-meta">File: MLB_Salaries.R</p>
               <p class="card-text">
-                Vector autoregression model estimating the interaction of FX
-                pairs and simulating responses to macro shocks (e.g., tariff
-                changes).
+                R script focused on Major League Baseball salary data – useful
+                for exploring compensation distributions, trends, or related
+                metrics.
               </p>
-              <ul class="card-list">
-                <li>Data cleaning, stationarity checks, and lag selection.</li>
-                <li>Impulse response and forecast error variance analysis.</li>
-                <li>RMarkdown report with interpretation and charts.</li>
-              </ul>
               <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View RMarkdown / Repo
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/MLB_Salaries.R"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Script
                 </a>
               </div>
             </article>
 
+            <!-- US Bonds -->
             <article class="card">
               <div class="card-badge-row">
                 <span class="card-badge">R</span>
-                <span class="card-tag">Risk / Factors</span>
+                <span class="card-tag">Fixed Income</span>
               </div>
-              <h3 class="card-title">Factor Exposure & Risk Analysis</h3>
-              <p class="card-meta">tidyverse • PerformanceAnalytics</p>
+              <h3 class="card-title">US Bonds Analysis</h3>
+              <p class="card-meta">File: US Bonds.R</p>
               <p class="card-text">
-                R-based analysis of portfolio returns against factor models
-                (size, value, momentum) and risk metrics.
+                R script for exploring US bond data – a basis for fixed income
+                analysis, yield curves, or return characteristics.
               </p>
-              <ul class="card-list">
-                <li>Regressions vs. factor benchmarks.</li>
-                <li>Rolling volatility, beta, and drawdown estimates.</li>
-                <li>Visual factor contribution breakdown.</li>
-              </ul>
               <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  View R Scripts
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/US%20Bonds.R"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View Script
                 </a>
               </div>
             </article>
           </div>
         </section>
 
-        <!-- STOCK ANALYSIS -->
-        <section id="stock-analysis">
+        <!-- PDF / DOCS -->
+        <section id="reports">
           <div class="section-header">
-            <h2 class="section-title">Stock Analysis</h2>
+            <h2 class="section-title">PDF & Documentation</h2>
             <p class="section-subtitle">
-              Company-level and portfolio-level write-ups, tying together Excel,
-              Python, and R outputs.
+              Supporting documents and repository overview.
             </p>
           </div>
 
           <div class="projects-grid">
+            <!-- SMIF_BLX.pdf -->
             <article class="card">
               <div class="card-badge-row">
-                <span class="card-badge">Equity Research</span>
-                <span class="card-tag">Single Stock</span>
+                <span class="card-badge">PDF</span>
+                <span class="card-tag">Report</span>
               </div>
-              <h3 class="card-title">Deep Dive: [Ticker] Investment Thesis</h3>
-              <p class="card-meta">Fundamental • Valuation • Risk</p>
+              <h3 class="card-title">SMIF_BLX.pdf</h3>
+              <p class="card-meta">File: SMIF_BLX.pdf</p>
               <p class="card-text">
-                Example of a full stock write-up including business model,
-                financials, valuation outputs, and key risks/catalysts.
+                PDF document stored alongside the code and models in this
+                repository. Open or download to review the contents directly.
               </p>
-              <ul class="card-list">
-                <li>Links to the supporting Excel and code.</li>
-                <li>Base / bull / bear scenarios.</li>
-                <li>Clear recommendation with rationale.</li>
-              </ul>
               <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  PDF Write-Up
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/raw/main/SMIF_BLX.pdf"
+                >
+                  Download PDF
+                </a>
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/SMIF_BLX.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View on GitHub
                 </a>
               </div>
             </article>
 
+            <!-- README -->
             <article class="card">
               <div class="card-badge-row">
-                <span class="card-badge">Portfolio</span>
-                <span class="card-tag">Multi-Asset</span>
+                <span class="card-badge">Docs</span>
+                <span class="card-tag">Repository</span>
               </div>
-              <h3 class="card-title">Portfolio Performance & Allocation</h3>
-              <p class="card-meta">Excel • Python • Charts</p>
+              <h3 class="card-title">Repository README</h3>
+              <p class="card-meta">File: README.md</p>
               <p class="card-text">
-                Overview of portfolio construction, performance vs. benchmarks,
-                and risk/return characteristics across time.
+                Markdown file describing this repository. Use it to provide
+                context, installation instructions, or notes on how the projects
+                relate to one another.
               </p>
-              <ul class="card-list">
-                <li>Allocation by sector, factor, and geography.</li>
-                <li>Historical performance vs. S&P 500 or custom benchmark.</li>
-                <li>Stress tests and drawdown analysis.</li>
-              </ul>
               <div class="card-links">
-                <a class="pill-link" href="#" target="_blank" rel="noreferrer">
-                  Summary Deck
+                <a
+                  class="pill-link"
+                  href="https://github.com/paulmccoy03/portfolio/blob/main/README.md"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View README
                 </a>
               </div>
             </article>
@@ -840,16 +932,16 @@
           <div class="section-header">
             <h2 class="section-title">Contact</h2>
             <p class="section-subtitle">
-              Open to opportunities in equity research, risk analytics, and
-              data-driven finance roles.
+              For questions about any of these projects or artifacts, feel free
+              to reach out.
             </p>
           </div>
 
           <div class="contact-card">
             <div>
               <strong>Let’s connect.</strong><br />
-              Reach out if you’d like to talk about projects, roles, or
-              collaborations.
+              Use this repository as a starting point to talk about projects,
+              roles, or collaborations.
             </div>
             <div class="contact-links">
               <!-- Replace with your real email & LinkedIn -->
@@ -870,8 +962,8 @@
 
         <!-- FOOTER -->
         <footer>
-          © <span id="year"></span> Paul McCoy. Built with HTML/CSS and hosted
-          on GitHub Pages.
+          © <span id="year"></span> Paul McCoy. This page summarizes the contents
+          of the <code>portfolio</code> repository.
         </footer>
       </div>
     </main>
