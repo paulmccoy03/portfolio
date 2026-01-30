@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Paul McCoy – Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of accounting and finance projects by Paul McCoy, featuring Python, R, Excel, and data analysis work." />
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-alt: #020617;
+            --card: #020617;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.1);
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: #1f2937;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(15,23,42,0.94));
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .nav-title {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.25rem 1.25rem 3rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.3fr);
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 2.75rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 780px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .hero-heading {
+            font-size: clamp(2.1rem, 4vw, 2.6rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            color: var(--muted);
+            font-size: 0.98rem;
+            max-width: 36rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag-pill {
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+            background: rgba(15,23,42,0.8);
+            transition: all 0.3s ease;
+        }
+
+        .tag-pill:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .hero-panel {
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            background: radial-gradient(circle at top left, rgba(56,189,248,0.09), rgba(15,23,42,0.9));
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
+        }
+
+        .hero-panel h2 {
+            font-size: 0.95rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-panel p {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .hero-panel dl {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem 1.25rem;
+            font-size: 0.82rem;
+        }
+
+        .hero-panel dt {
+            color: var(--muted);
+        }
+
+        .hero-panel dd {
+            font-weight: 600;
+        }
+
+        section {
+            margin-bottom: 2.5rem;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        section p.section-intro {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.1rem;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(15,23,42,0.94));
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            padding: 1rem 1.1rem 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInCard 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInCard {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-type {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+        }
+
+        .project-tag {
+            font-size: 0.72rem;
+            padding: 0.1rem 0.55rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid rgba(56,189,248,0.2);
+        }
+
+        .project-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.25rem;
+        }
+
+        .project-links a {
+            font-size: 0.8rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.7rem;
+            text-decoration: none;
+            color: var(--text);
+            background: rgba(15,23,42,0.9);
+            transition: all 0.2s ease;
+        }
+
+        .project-links a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-soft);
+        }
+
+        .category-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        .contact a {
+            font-weight: 500;
+        }
+
+        footer {
+            font-size: 0.75rem;
+            color: var(--muted);
+            text-align: center;
+            padding: 1.5rem 1.25rem 2rem;
+            border-top: 1px solid var(--border);
+            background: radial-gradient(circle at top, #020617, #000);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: var(--bg);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+            z-index: 100;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4);
+        }
+
+        .scroll-to-top svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent);
+            border-radius: 0.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: var(--accent);
+            color: var(--bg);
+            transform: translateX(4px);
+            text-decoration: none;
+        }
+
+        .github-link svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Stagger animation for project cards */
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+<header>
+    <div class="nav-inner">
+        <div class="nav-title">Paul McCoy • Portfolio</div>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#supporting-docs">Docs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero" id="about">
+        <div>
+            <h1 class="hero-heading">Accounting &amp; Finance Projects</h1>
+            <p class="hero-subtitle">
+                A curated collection of work from my undergraduate studies in accounting and finance, 
+                spanning Python, R, Jupyter, and Excel. Some projects were completed for coursework, 
+                while others are independent builds that reflect my interests in markets, statistics, 
+                and data-driven decision making.
+            </p>
+            <a href="https://github.com/paulmccoy03/portfolio" target="_blank" rel="noopener noreferrer" class="github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                View Full Repository
+            </a>
+            <div class="hero-tags">
+                <span class="tag-pill">Accounting &amp; Finance</span>
+                <span class="tag-pill">Python · R · Excel</span>
+                <span class="tag-pill">Statistical Analysis</span>
+                <span class="tag-pill">Portfolio Projects</span>
+            </div>
+        </div>
+
+        <aside class="hero-panel">
+            <h2>Snapshot</h2>
+            <p>
+                Representative samples of my work with financial data, hypothesis testing, valuation,
+                and automation.
+            </p>
+            <dl>
+                <div>
+                    <dt>Languages</dt>
+                    <dd>Python, R, SQL, Excel/VBA</dd>
+                </div>
+                <div>
+                    <dt>Focus Areas</dt>
+                    <dd>Corporate Finance, Markets, Analytics</dd>
+                </div>
+                <div>
+                    <dt>Current Goal</dt>
+                    <dd>CPA preparation &amp; applied analytics</dd>
+                </div>
+            </dl>
+        </aside>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p class="section-intro">
+            Below are the projects currently in this repository. Each card links directly to the file on GitHub.
+        </p>
+
+        <!-- Featured / Jupyter & Excel -->
+        <div class="category-label">Featured work</div>
+        <div class="project-grid" style="margin-bottom: 1.8rem;">
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">Jupyter Notebook</span>
+                    <span class="project-tag">Python</span>
+                </div>
+                <h3 class="project-title">Financial Hypothesis Testing</h3>
+                <p class="project-desc">
+                    Jupyter notebook applying statistical tests to financial data, exploring relationships 
+                    between market variables and evaluating investment hypotheses.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/Financial_Hypothesis_Testing.ipynb"
+                       target="_blank" rel="noopener noreferrer" aria-label="View Financial Hypothesis Testing notebook on GitHub">
+                        View notebook on GitHub
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">Excel</span>
+                    <span class="project-tag">Financial Statement Analysis</span>
+                </div>
+                <h3 class="project-title">Kraft Foods – Financial Statement Analysis</h3>
+                <p class="project-desc">
+                    Excel-based financial statement analysis for Kraft, including ratio work and
+                    interpretation of performance over time.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/Kraft_FSA.xlsx"
+                       target="_blank" rel="noopener noreferrer" aria-label="Open Kraft Foods Financial Statement Analysis Excel file on GitHub">
+                        Open Excel file on GitHub
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Python Projects -->
+        <div class="category-label">Python scripts</div>
+        <div class="project-grid" style="margin-bottom: 1.8rem;">
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">Python Script</span>
+                    <span class="project-tag">Text Analytics</span>
+                </div>
+                <h3 class="project-title">Frankenstein Word Count</h3>
+                <p class="project-desc">
+                    Script that processes the text of Mary Shelley's <em>Frankenstein</em>,
+                    performs word counts, and prepares data for basic text analysis.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/Frankenstine_word_count.py"
+                       target="_blank" rel="noopener noreferrer" aria-label="View Frankenstein Word Count code on GitHub">
+                        View code on GitHub
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">Python Script</span>
+                    <span class="project-tag">Neural Networks</span>
+                </div>
+                <h3 class="project-title">MNIST Neural Network</h3>
+                <p class="project-desc">
+                    Implementation of a neural network model on the MNIST handwritten digit dataset,
+                    demonstrating fundamentals of deep learning and classification accuracy.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/MNIST_NeuralNetworkCode.py"
+                       target="_blank" rel="noopener noreferrer" aria-label="View MNIST Neural Network code on GitHub">
+                        View code on GitHub
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">Python Script</span>
+                    <span class="project-tag">Time Series</span>
+                </div>
+                <h3 class="project-title">MXN VAR Model</h3>
+                <p class="project-desc">
+                    Vector autoregression (VAR) work around MXN-related time series, suitable for studying 
+                    exchange rate dynamics and macro links.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/MXN_VAr.py"
+                       target="_blank" rel="noopener noreferrer" aria-label="View MXN VAR Model code on GitHub">
+                        View code on GitHub
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">Python Script</span>
+                    <span class="project-tag">Automation</span>
+                </div>
+                <h3 class="project-title">URL Summary Tool</h3>
+                <p class="project-desc">
+                    Utility script for summarizing content from URLs, useful for quickly extracting key 
+                    information from online sources.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/URLsummary.py"
+                       target="_blank" rel="noopener noreferrer" aria-label="View URL Summary Tool code on GitHub">
+                        View code on GitHub
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- R Projects -->
+        <div class="category-label">R projects</div>
+        <div class="project-grid" style="margin-bottom: 1.8rem;">
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">R Script</span>
+                    <span class="project-tag">Sports Finance</span>
+                </div>
+                <h3 class="project-title">MLB Salaries Analysis</h3>
+                <p class="project-desc">
+                    R-based exploration of MLB salary data, combining data wrangling and visualization
+                    to study compensation patterns in professional baseball.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/MLB_Salaries.R"
+                       target="_blank" rel="noopener noreferrer" aria-label="View MLB Salaries Analysis script on GitHub">
+                        View script on GitHub
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">R Script</span>
+                    <span class="project-tag">Fixed Income</span>
+                </div>
+                <h3 class="project-title">U.S. Bonds Analysis</h3>
+                <p class="project-desc">
+                    R script focused on U.S. bond data, supporting work with yields, duration, or
+                    return characteristics in fixed income markets.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/US%20Bonds.R"
+                       target="_blank" rel="noopener noreferrer" aria-label="View U.S. Bonds Analysis script on GitHub">
+                        View script on GitHub
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="supporting-docs">
+        <h2>Supporting Documents</h2>
+        <p class="section-intro">
+            Additional documents that provide context on my experience and involvement.
+        </p>
+
+        <div class="project-grid">
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">PDF</span>
+                    <span class="project-tag">Resume</span>
+                </div>
+                <h3 class="project-title">Resume</h3>
+                <p class="project-desc">
+                    A summary of my education, experience, and skills in accounting, finance, and data analysis.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/Resume.pdf"
+                       target="_blank" rel="noopener noreferrer" aria-label="View Resume PDF on GitHub">
+                        View resume (PDF)
+                    </a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-meta">
+                    <span class="project-type">PDF</span>
+                    <span class="project-tag">Student-Managed Fund</span>
+                </div>
+                <h3 class="project-title">SMIF – BLX</h3>
+                <p class="project-desc">
+                    Document related to student-managed investment fund work (BLX), highlighting practical
+                    exposure to portfolio management concepts.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/paulmccoy03/portfolio/blob/main/SMIF_BLX.pdf"
+                       target="_blank" rel="noopener noreferrer" aria-label="View SMIF BLX document PDF on GitHub">
+                        View document (PDF)
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <p>
+            Interested in talking about accounting, finance, or data projects?
+            Reach me at
+            <a href="mailto:paulmccoy@mail.wvu.edu">paulmccoy@mail.wvu.edu</a>.
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year"></span> Paul McCoy. All rights reserved.</p>
+</footer>
+
+<button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+<script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Intersection Observer for card animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+    });
+</script>
+
+</body>
+</html>
