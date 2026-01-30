@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Paul McCoy – Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of accounting and finance projects by Paul McCoy, featuring Python, R, Excel, and data analysis work." />
     <style>
         :root {
             --bg: #0f172a;
@@ -22,6 +23,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
@@ -33,10 +38,17 @@
         a {
             color: var(--accent);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
             text-decoration: underline;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 4px;
         }
 
         header {
@@ -75,10 +87,27 @@
         .nav-links a {
             color: var(--muted);
             text-decoration: none;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--accent);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         main {
@@ -93,6 +122,18 @@
             gap: 2.5rem;
             align-items: center;
             margin-bottom: 2.75rem;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 780px) {
@@ -105,6 +146,10 @@
             font-size: clamp(2.1rem, 4vw, 2.6rem);
             font-weight: 700;
             margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-subtitle {
@@ -128,6 +173,14 @@
             font-size: 0.75rem;
             color: var(--muted);
             background: rgba(15,23,42,0.8);
+            transition: all 0.3s ease;
+        }
+
+        .tag-pill:hover {
+            border-color: var(--accent);
+            background: var(--accent-soft);
+            color: var(--accent);
+            transform: translateY(-2px);
         }
 
         .hero-panel {
@@ -135,6 +188,12 @@
             padding: 1.5rem;
             background: radial-gradient(circle at top left, rgba(56,189,248,0.09), rgba(15,23,42,0.9));
             border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.1);
         }
 
         .hero-panel h2 {
@@ -195,6 +254,21 @@
             display: flex;
             flex-direction: column;
             gap: 0.6rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInCard 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInCard {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);
         }
 
         .project-meta {
@@ -245,11 +319,13 @@
             text-decoration: none;
             color: var(--text);
             background: rgba(15,23,42,0.9);
+            transition: all 0.2s ease;
         }
 
         .project-links a:hover {
             border-color: var(--accent);
             color: var(--accent);
+            background: var(--accent-soft);
         }
 
         .category-label {
@@ -279,13 +355,84 @@
             border-top: 1px solid var(--border);
             background: radial-gradient(circle at top, #020617, #000);
         }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent);
+            color: var(--bg);
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+            z-index: 100;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(56, 189, 248, 0.4);
+        }
+
+        .scroll-to-top svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent);
+            border-radius: 0.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            background: var(--accent);
+            color: var(--bg);
+            transform: translateX(4px);
+            text-decoration: none;
+        }
+
+        .github-link svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        /* Stagger animation for project cards */
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
 <header>
     <div class="nav-inner">
         <div class="nav-title">Paul McCoy • Portfolio</div>
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#supporting-docs">Docs</a>
             <a href="#contact">Contact</a>
@@ -303,6 +450,12 @@
                 while others are independent builds that reflect my interests in markets, statistics, 
                 and data-driven decision making.
             </p>
+            <a href="https://github.com/paulmccoy03/portfolio" target="_blank" rel="noopener noreferrer" class="github-link">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                View Full Repository
+            </a>
             <div class="hero-tags">
                 <span class="tag-pill">Accounting &amp; Finance</span>
                 <span class="tag-pill">Python · R · Excel</span>
@@ -355,7 +508,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/Financial_Hypothesis_Testing.ipynb"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View Financial Hypothesis Testing notebook on GitHub">
                         View notebook on GitHub
                     </a>
                 </div>
@@ -373,7 +526,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/Kraft_FSA.xlsx"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="Open Kraft Foods Financial Statement Analysis Excel file on GitHub">
                         Open Excel file on GitHub
                     </a>
                 </div>
@@ -390,12 +543,12 @@
                 </div>
                 <h3 class="project-title">Frankenstein Word Count</h3>
                 <p class="project-desc">
-                    Script that processes the text of Mary Shelley’s <em>Frankenstein</em>,
+                    Script that processes the text of Mary Shelley's <em>Frankenstein</em>,
                     performs word counts, and prepares data for basic text analysis.
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/Frankenstine_word_count.py"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View Frankenstein Word Count code on GitHub">
                         View code on GitHub
                     </a>
                 </div>
@@ -413,7 +566,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/MNIST_NeuralNetworkCode.py"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View MNIST Neural Network code on GitHub">
                         View code on GitHub
                     </a>
                 </div>
@@ -431,7 +584,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/MXN_VAr.py"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View MXN VAR Model code on GitHub">
                         View code on GitHub
                     </a>
                 </div>
@@ -449,7 +602,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/URLsummary.py"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View URL Summary Tool code on GitHub">
                         View code on GitHub
                     </a>
                 </div>
@@ -471,7 +624,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/MLB_Salaries.R"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View MLB Salaries Analysis script on GitHub">
                         View script on GitHub
                     </a>
                 </div>
@@ -489,7 +642,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/US%20Bonds.R"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View U.S. Bonds Analysis script on GitHub">
                         View script on GitHub
                     </a>
                 </div>
@@ -515,7 +668,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/Resume.pdf"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View Resume PDF on GitHub">
                         View resume (PDF)
                     </a>
                 </div>
@@ -533,7 +686,7 @@
                 </p>
                 <div class="project-links">
                     <a href="https://github.com/paulmccoy03/portfolio/blob/main/SMIF_BLX.pdf"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank" rel="noopener noreferrer" aria-label="View SMIF BLX document PDF on GitHub">
                         View document (PDF)
                     </a>
                 </div>
@@ -545,7 +698,7 @@
         <p>
             Interested in talking about accounting, finance, or data projects?
             Reach me at
-            <a href="mailto:paulmccoy890@gmail.com">paulmccoy890@gmail.com</a>.
+            <a href="mailto:paulmccoy@mail.wvu.edu">paulmccoy@mail.wvu.edu</a>.
         </p>
     </section>
 </main>
@@ -554,9 +707,60 @@
     <p>&copy; <span id="year"></span> Paul McCoy. All rights reserved.</p>
 </footer>
 
+<button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
 <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll to top button functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Intersection Observer for card animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+    });
 </script>
+
 </body>
 </html>
